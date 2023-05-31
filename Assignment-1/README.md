@@ -67,3 +67,41 @@ const removeAllOccurence = (n, t) => {
   return k;
 };
 ```
+
+<br>
+
+### Question-3
+
+---
+
+💡 **Q3.** Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
+
+You must write an algorithm with O(log n) runtime complexity.
+
+**Example 1:**
+Input: nums = [1,3,5,6], target = 5
+
+Output: 2
+
+#### Ans :
+
+```javascript
+const findElement = (num, key) => {
+  let s = 0;
+  let e = num.length - 1;
+
+  while (s <= e) {
+    let m = Math.floor((s + e) / 2);
+    if (num[m] == key) {
+      return m;
+    }
+    if (num[m] <= key) {
+      s = m + 1;
+    } else {
+      e = m - 1;
+    }
+  }
+
+  return [];
+};
+```
